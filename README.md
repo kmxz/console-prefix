@@ -1,4 +1,4 @@
-# console-prefix
+# console-prefix [![Build Status](https://img.shields.io/travis/alanshaw/console-prefix.svg?style=flat-square)](https://travis-ci.org/alanshaw/console-prefix) [![Dependency Status](https://david-dm.org/alanshaw/console-prefix.svg?style=flat-square)](https://david-dm.org/alanshaw/console-prefix)
 
 Drop in replacement for console to add a prefix to messages. Adds an ISO timestamp by default.
 
