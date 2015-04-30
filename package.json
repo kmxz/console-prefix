@@ -1,6 +1,6 @@
 {
   "name": "console-prefix",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Drop in replacement for console to add a prefix to messages. Adds an ISO timestamp by default.",
   "main": "index.js",
   "dependencies": {
