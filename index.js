@@ -19,19 +19,9 @@ function createProxy (opts) {
   var methods = opts.methods || METHODS
   var logger = opts.console || console
 
-  return Object.keys(logger).reduce(function (proxy, method) {
-    if (methods.indexOf(method) > -1) {
-      proxy[method] = function () {
-        var args = [].slice.call(arguments)
-        args.unshift(prefix())
-        logger[method].apply(logger, args)
-      }
-    } else {
-      proxy[method] = logger[method]
-    }
-
-    return proxy
-  }, {})
+  return new Proxy(logger, {
+    get: (target, method) => methods.includes(method) ? (...args) => target[method](prefix(), ...args) : target[method]
+  })
 }
 
 module.exports = xtend(createProxy, createProxy())
